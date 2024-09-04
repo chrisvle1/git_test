@@ -12,14 +12,14 @@ myarray::myarray()
     }
 }
 
-myarray::myarray(int n, int r)
-{
-    nr = n;
-    nc = r;
-    myptr = (char**)malloc(sizeof(char*)*nr);
-    for(int i=0;i<nr;i++)
+myarray::myarray(int n, int r) : nr(n), nc(r) {
+    myptr = (char**)malloc(sizeof(char*) * nr);
+    for (int i = 0; i < nr; i++) 
     {
-        myptr[i] = (char*)malloc(sizeof(char)*nc);
+        myptr[i] = (char*)malloc(sizeof(char) * nc);
+        for (int j = 0; j < nc; j++) {
+            myptr[i][j] = 0;
+        }
     }
 }
 
